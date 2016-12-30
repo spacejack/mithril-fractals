@@ -1,0 +1,35 @@
+{
+  "name": "mithril-fractals",
+  "version": "0.0.1",
+  "description": "Mithril Fractals",
+  "main": "index.js",
+  "scripts": {
+    "serve": "http-server -p 3000 public",
+    "compile": "browserify --debug src/main.ts -p [ tsify --project src/tsconfig.json ] -o public/js/app.js",
+    "watch": "watchify -v --debug src/main.ts -p [ tsify --project src/tsconfig.json ] -o public/js/app.js",
+    "start": "npm-run-all -p watch serve",
+    "build": "browserify src/main.ts -p [ tsify --project src/tsconfig.json ] | uglifyjs -cm -o public/js/app.js",
+    "clean": "rm -f public/js/app.js"
+  },
+  "keywords": [],
+  "author": "Mike Linkovich",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/d3-scale": "^1.0.5",
+    "@types/d3-selection": "^1.0.7",
+    "@types/mithril": "github:spacejack/mithril.d.ts#1.0.0-rc.6",
+    "browserify": "^13.1.1",
+    "http-server": "^0.9.0",
+    "npm-run-all": "^3.1.2",
+    "tsify": "^2.0.7",
+    "tslint": "^4.1.1",
+    "typescript": "^2.1.4",
+    "uglify-js": "^2.7.5",
+    "watchify": "^3.8.0"
+  },
+  "dependencies": {
+    "d3-scale": "^1.0.4",
+    "d3-selection": "^1.0.3",
+    "mithril": "^1.0.0-rc.6"
+  }
+}
