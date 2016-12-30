@@ -5,14 +5,27 @@ function deg (radians: number) {
 	return radians * (180 / Math.PI)
 }
 
-const memoizedCalc = (function(){
-	const memo = {}
+interface MemoIn {
+	w: number
+	heightFactor: number
+	lean: number
+}
 
-	function key ({w, heightFactor, lean}: any) {
+interface MemoOut {
+	nextRight: number
+	nextLeft: number
+	A: number
+	B: number
+}
+
+const memoizedCalc = (function(){
+	const memo: {[id: string]: MemoOut} = {}
+
+	function key ({w, heightFactor, lean}: MemoIn) {
 		return [w, heightFactor, lean].join('-')
 	}
 
-    return function memoizedCalc (args: any) {
+    return function memoizedCalc (args: MemoIn) {
 		const memoKey = key(args)
 
 		if (memo[memoKey]) {

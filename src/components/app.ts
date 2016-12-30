@@ -16,6 +16,7 @@ interface State {
 	lean: number
 	realMax: 11
 	onMouseMove (this: State, event: MouseEvent): void
+	next (this: State): void
 }
 
 export default {
@@ -23,7 +24,7 @@ export default {
 	svgHeight: 600,
 	svgOffsetX: 0,
 	svgOffsetY: 0,
-	currentMax: 11,
+	currentMax: 0,
 	realMax: 11,
 	baseW: 80,
 	heightFactor: 0,
@@ -47,7 +48,19 @@ export default {
 		const rc = dom.querySelector('svg')!.getBoundingClientRect()
 		this.svgOffsetX = rc.left
 		this.svgOffsetY = rc.top
+		this.next()
 	},
+
+    next() {
+        const currentMax = this.currentMax
+        if (currentMax < this.realMax) {
+            this.currentMax = currentMax + 1
+			setTimeout(() => {
+				this.next()
+				m.redraw()
+			}, 500)
+        }
+    },
 
 	view() {
 		return m('.app',
