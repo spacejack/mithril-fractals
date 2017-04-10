@@ -101,4 +101,4 @@ export default {
 			)
 		)
 	}
-} as Mithril.Component<Attrs,State> & State
+} as m.Comp<Attrs,State>

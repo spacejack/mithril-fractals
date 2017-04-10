@@ -1,6 +1,6 @@
 {
   "name": "mithril-fractals",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Mithril Fractals",
   "main": "index.js",
   "scripts": {
@@ -15,19 +15,19 @@
   "author": "Mike Linkovich",
   "license": "MIT",
   "devDependencies": {
-    "@types/d3-scale": "^1.0.5",
-    "@types/mithril": "github:spacejack/mithril.d.ts#1.0.0-rc.6",
-    "browserify": "^13.1.1",
+    "@types/d3-scale": "^1.0.8",
+    "@types/mithril": "^1.1.0",
+    "browserify": "^14.3.0",
     "http-server": "^0.9.0",
-    "npm-run-all": "^3.1.2",
-    "tsify": "^2.0.7",
-    "tslint": "^4.1.1",
-    "typescript": "^2.1.4",
-    "uglify-js": "^2.7.5",
-    "watchify": "^3.8.0"
+    "npm-run-all": "^4.0.2",
+    "tsify": "^3.0.1",
+    "tslint": "^5.0.0",
+    "typescript": "^2.2.2",
+    "uglify-js": "^2.8.22",
+    "watchify": "^3.9.0"
   },
   "dependencies": {
-    "d3-scale": "^1.0.4",
-    "mithril": "^1.0.0-rc.6"
+    "d3-scale": "^1.0.5",
+    "mithril": "^1.1.1"
   }
 }

@@ -58,7 +58,7 @@ export interface Attrs {
 	maxlvl: number
 }
 
-const pythagoras: Mithril.Component<Attrs,{}> = {
+const pythagoras: m.Component<Attrs,{}> = {
 	view ({attrs: {w, x, y, heightFactor, lean, left, right, lvl, maxlvl}}) {
 		if (lvl >= maxlvl || w < 1) {
 			return null
